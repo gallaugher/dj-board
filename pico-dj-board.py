@@ -1,5 +1,5 @@
 # pico-dj-board-mpr121.py
-import board, adafruit_mpr121, time, audiomixer, audiocore, digitalio
+import board, adafruit_mpr121, time, audiomixer, digitalio
 from audiocore import WaveFile
 from audiopwmio import PWMAudioOut as AudioOut
 
@@ -48,7 +48,7 @@ audio.play(mixer)
 
 # read in all beats & simultaneously play them at audio sound .level = 0 (no volume)
 for i in range(len(beats)):
-    wave = audiocore.WaveFile(open(path+beats[i],"rb"))
+    wave = WaveFile(open(path+beats[i],"rb"))
     mixer.voice[i].play(wave, loop=True )
     mixer.voice[i].level = 0.0
 time.sleep(1.0)  # let drums play a bit
