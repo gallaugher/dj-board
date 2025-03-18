@@ -1,4 +1,6 @@
 # circuitplayground-dj-board-mpr121.py
+# NOTE: This code doesn't work on a CircuitPlayground Express, it doesn't support the AudioMixer library
+# It has been tested on a CircuitPlayground Bluefruit
 import board, adafruit_mpr121, time, audiomixer, audiocore, digitalio
 from audiocore import WaveFile
 from audiopwmio import PWMAudioOut as AudioOut
