@@ -8,7 +8,7 @@ BOARD & STEMMA-QT PORT
 - Raspberry Pi Pico (any pico series, original, 2, any W, will work the same)
 - STEMMA-QT / Qwiic Cable with pin jumpers
 or
-- CircuitPlayground (Express or Bluefruit)
+- CircuitPlayground Bluefruit (the CircuitPlayground Express isn't powerful enough for this build - it doesn't support the AudioMixer library)
 - STEMMA-QT / Qwiic Cable with Aligator Clip Jumpers
 
 TOUCHPAD SENSOR & CABLES
