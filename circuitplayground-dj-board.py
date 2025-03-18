@@ -1,9 +1,15 @@
 # circuitplayground-dj-board-mpr121.py
 # NOTE: This code doesn't work on a CircuitPlayground Express, it doesn't support the AudioMixer library
 # It has been tested on a CircuitPlayground Bluefruit
-import board, adafruit_mpr121, time, audiomixer, audiocore, digitalio
+import board, adafruit_mpr121, time, audiomixer, digitalio
 from audiocore import WaveFile
-from audiopwmio import PWMAudioOut as AudioOut
+try:
+    from audioio import AudioOut
+except ImportError:
+    try:
+        from audiopwmio import PWMAudioOut as AudioOut
+    except ImportError:
+        pass  # not always supported by every board!
 
 # Setup i2c on the Pico w/STEMMA_QT wired as shown in the diagram - GP4 (SDA/Blue), GP5 (SCL/Yellow, Power 3.3v(Out) Red
 # i2c = board.STEMMA_I2C() # Same for any board w/built-in STEMMA_QT port
@@ -50,7 +56,7 @@ audio.play(mixer)
 
 # read in all beats & simultaneously play them at audio sound .level = 0 (no volume)
 for i in range(len(beats)):
-    wave = audiocore.WaveFile(open(path+beats[i],"rb"))
+    wave = WaveFile(open(path+beats[i],"rb"))
     mixer.voice[i].play(wave, loop=True )
     mixer.voice[i].level = 0.0
 time.sleep(1.0)  # let drums play a bit
