@@ -1,7 +1,7 @@
 For tutorial on this code & related build, see lesson in Prof. Gallaugher's CircuitPython School at:
 https://bit.ly/circuitpython-school
 <img width="1600" alt="Wiring for Pico" src="https://github.com/user-attachments/assets/a8b71596-8e8e-4e40-a759-4d865ed39a4b" />
-<img width="1600" alt="Wiring for CircuitPlayground" src="https://github.com/user-attachments/assets/47750d64-3bc9-4e86-9984-948a6308a5d1" />
+<img width="1600" alt="CPB Wiring" src="https://github.com/user-attachments/assets/890ef359-6d46-4c99-9d3a-32e8089a262a" />
 
 Products Used:
 BOARD & STEMMA-QT PORT
