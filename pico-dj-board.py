@@ -1,7 +1,13 @@
 # pico-dj-board-mpr121.py
 import board, adafruit_mpr121, time, audiomixer, digitalio
 from audiocore import WaveFile
-from audiopwmio import PWMAudioOut as AudioOut
+try:
+    from audioio import AudioOut
+except ImportError:
+    try:
+        from audiopwmio import PWMAudioOut as AudioOut
+    except ImportError:
+        pass  # not always supported by every board!
 
 # Setup i2c on the Pico w/STEMMA_QT wired as shown in the diagram - GP4 (SDA/Blue), GP5 (SCL/Yellow, Power 3.3v(Out) Red
 i2c = board.STEMMA_I2C() # Same for any board w/built-in STEMMA_QT port
